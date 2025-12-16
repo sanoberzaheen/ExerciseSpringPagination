@@ -45,17 +45,17 @@ public class DirectorController {
 		return directorService.findDirector(name, page, size, sort);
 	}
 
-	@PostMapping
+	@PostMapping("/create")
 	public Director create(@RequestBody Director director) {
 		return directorService.create(director);
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/update/{id}")
 	public Director update(@PathVariable Long id, @RequestBody Director director) {
 		return directorService.update(id, director);
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public void delete(@PathVariable Long id) {
 		directorService.delete(id);
 	}
